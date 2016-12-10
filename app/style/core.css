@@ -1,0 +1,371 @@
+@font-face {
+  font-family: ArchivoBlack;
+  src: url("/app/style/fonts/archivo-black.otf") format("opentype");
+}
+
+html, body{
+  font-family: 'Roboto', 'Helvetica', sans-serif;
+}
+body{
+  margin: 0;
+  padding: 0;
+  background-color: #e2d4b7;
+}
+h1,h2,h3,h4,h5,h6{
+  font-family: 'ArchivoBlack', sans-serif;
+}
+
+ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+ul li{
+  margin: 0;
+  padding: 0;
+}
+
+
+.app-content{
+  display: block;
+}
+
+.app-content .menu-button{
+  border: none;
+  box-shadow: none;
+  background: none;
+  color: #ddd;
+  padding: 11px 8px;
+  vertical-align: middle;
+}
+.app-content .menu-button.close{
+  float: right;
+}
+.app-content .menu-button.hidden{
+  display: none;
+}
+.app-content .menu-button i{
+  vertical-align: middle;
+}
+
+.app-content .app-topbar{
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+  height: 48px;
+  background-color: rgba(28, 37, 65, 1);
+  color: #ddd;
+  left: 0;
+  width: 100%;
+  transition: left .4s, width .4s;
+  z-index: 9000;
+}
+.app-content .app-topbar.fixed{
+  position: fixed;
+  top: 0;
+}
+.app-content .app-topbar.fixed + .app-main-content{
+  top: 48px;
+}
+.app-content .app-topbar ul{
+  display: inline-block;
+  margin-left: 4px;
+}
+.app-content .app-topbar ul li{
+  display: inline-block;
+}
+.app-content .app-topbar ul li a{
+  display: block;
+  font-size: 16px;
+  padding: 15px 6px;
+  color: #ddd;
+  text-decoration: none;
+}
+
+
+.app-content .app-sidebar{
+  display: block;
+  position: fixed;
+  box-sizing: border-box;
+  top: 0;
+  left: -240px;
+  bottom: 0;
+  width: 240px;
+  background-color: rgba(28, 37, 65, .95);
+  color: #ddd;
+  overflow-y: auto;
+  box-shadow: 0px 2px 4px -1px #444;
+  transition: left .4s;
+  z-index: 9100;
+}
+.app-content .app-sidebar.preview{
+  left: 0px;
+}
+.app-content .app-sidebar .app-sidebar-topbar{
+  background-color: rgba(28, 37, 65, 1);
+  height: 48px;
+}
+.app-content .app-sidebar a{
+  color: #ddd;
+  text-decoration: none;
+}
+.app-content .app-sidebar .app-sidebar-nav ul li{
+  position: relative;
+}
+.app-content .app-sidebar .app-sidebar-nav ul li.separator{
+  margin: 12px 36px 11px;
+  border-top: 1px solid #777;
+}
+.app-content .app-sidebar .app-sidebar-nav ul li i{
+  position: absolute;
+  top: 8px;
+  left: 18px;
+  z-index: -1;
+}
+.app-content .app-sidebar .app-sidebar-nav ul li a{
+  display: block;
+  padding: 12px 8px 12px 56px;
+  font-size: 16px;
+}
+.app-content .app-sidebar .app-sidebar-nav ul li a:hover{
+  background-color: rgba(250, 250, 250, .15);
+}
+
+.app-content .app-sidebar .app-sidebar-account{
+  display: block;
+  text-align: center;
+  padding: 24px 12px 16px;
+}
+.app-content .app-sidebar .app-sidebar-account .account-avatar{
+  display: block;
+  border: 2px solid #ddd;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  margin: auto;
+}
+.app-content .app-sidebar .app-sidebar-account .account-username{
+  display: block;
+  margin: 0;
+  padding: 16px 0px 4px;
+}
+
+.app-content .app-main-content{
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: left .4s, width .4s;
+}
+
+
+.section-container{
+  padding: 16px;
+}
+
+
+.table-container{
+  display: block;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: rgba(250, 250, 250, 0.4);
+  border-radius: 2px;
+}
+.table-container table{
+  box-sizing: border-box;
+  width: 100%;
+  border-collapse: collapse;
+}
+.table-container table th,
+.table-container table td{
+  text-align: left;
+  padding: 8px;
+}
+
+
+input,
+select,
+a.action{
+  display: inline-block;
+  border: none;
+  box-shadow: none;
+  background: none;
+  background-color: #eee;
+  padding: 12px 16px;
+  margin-right: 8px;
+  margin-bottom: 16px;
+  text-decoration: none;
+  color: #222;
+}
+a.action,
+input[type="submit"]{
+  opacity: .8;
+  box-shadow: 0px 2px 4px -1px #444;
+  cursor: pointer;
+}
+input[type="submit"]{
+  background-color: #f46036;
+  color: #ddd;
+}
+a.action:hover,
+input[type="submit"]:hover{
+  opacity: .95;
+  box-shadow: 0px 6px 8px -2px #444;
+}
+a.action-icon{
+  display: inline-block;
+  height: 36px;
+  width: 36px;
+  text-align: center;
+  color: #444;
+  border-radius: 50%;
+}
+a.action-icon i{
+  vertical-align: middle;
+  padding: 6px;
+}
+a.action-icon:hover{
+  box-shadow: 0px 2px 4px -1px #444;
+}
+
+label>span{
+  display: block;
+  padding: 4px 0px;
+}
+
+.route-preview{
+  display: none;
+}
+.route-preview.show{
+  display: block;
+}
+
+.text-right{
+  text-align: right !important;
+}
+
+@media screen and (min-width: 926px){
+  .app-content .menu-button{
+    display: none;
+  }
+  .app-content .app-topbar{
+    left: 240px;
+    width: calc(100% - 240px);
+  }
+  .app-content .app-sidebar{
+    left: 0px;
+  }
+  .app-content .app-main-content{
+    left: 240px;
+    width: calc(100% - 240px);
+  }
+}
+
+/* inputs */
+/*input{
+  border: none;
+  box-shadow: none;
+}
+input:focus:invalid{
+  border: 2px solid red;
+}
+input:valid + span::after{
+  position: absolute;
+  bottom: 12px;
+  right: 10px;
+  color: #6baa75;
+  font-family: "Material Icons";
+  content: "\E86C";
+}*/
+
+
+/* app container */
+/*.app-content{
+  padding-bottom: 24px;
+}
+.app-content .page-header{
+  display: block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 200px;
+  background-color: #09814a;
+  color: #e5c687;
+}
+.app-content .page-header nav>ul{
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+  padding: 8px 16px;
+}
+.app-content .page-header nav>ul>li{
+  display: inline-block;
+}
+.app-content .page-header nav>ul>li>a{
+  display: block;
+  color: #444;
+  text-decoration: none;
+  padding: 8px;
+  font-size: 16px;
+}*/
+
+
+/* login form */
+/*.login-container{
+  display: block;
+  position: relative;
+  text-align: center;
+  margin-top: -83px;
+  margin-bottom: 36px;
+}
+.login-container .dlg-login{
+  box-sizing: border-box;
+  text-align: left;
+  margin: auto;
+  width: 480px;
+  max-width: 100%;
+  padding: 16px;
+  background-color: #f5f0f6;
+  box-shadow: 1px 1px 4px #444, 0px 6px 0px -3px #aaa, 1px 14px 8px -5px #444;
+}
+.login-container .dlg-login fieldset{
+  border: none;
+  margin: 0 0 16px;
+  padding: 0;
+}
+.login-container .dlg-login label,
+.login-container .dlg-login input{
+  display: block;
+}
+.login-container .dlg-login label{
+  padding: 16px 0 4px;
+  color: #272932;
+  position: relative;
+}
+.login-container .dlg-login input,
+.login-container .dlg-login button{
+  box-sizing: border-box;
+  background: none;
+  padding: 8px 12px;
+  background-color: #4d7ea8;
+  border-radius: 2px;
+}
+.login-container .dlg-login input:not([type="submit"]){
+  width: 100%;
+  color: #f5f0f6;
+  padding-right: 32px;
+}
+.login-container .dlg-login input[type="submit"]{
+  background-color: #6baa75;
+  color: #f5f0f6;
+  box-shadow: 0px 2px 4px -1px #444;
+}
+.login-container .dlg-login input[type="submit"]:hover{
+  box-shadow: 0px 6px 8px -2px #444;
+  margin-top: -1px;
+  margin-bottom: 1px;
+}*/
