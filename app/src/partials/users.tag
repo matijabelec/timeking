@@ -41,8 +41,8 @@
     self.on('mount', function(){
       aja()
   		  .method('get')
-  		  .url('/api/users/')
-  		  .data({limit: 10})
+  		  .url(api + '/users')
+  		  /*.data({limit: 10})*/
   		  .on('200', function(response) {
   				console.log(response);
   				self.update({ users: response.records });

@@ -83,6 +83,9 @@
 		route('/schedules/create', function(){
 			riot.mount('.app-main-preview', 'schedule-create');
 		});
+		route('/schedules/*', function(id){
+			riot.mount('.app-main-preview', 'schedule-form', {'id': id});
+		});
 		route('/schedules', function(){
 			riot.mount('.app-main-preview', 'schedules');
 		});

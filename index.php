@@ -1,4 +1,7 @@
-<!doctype html>
+<?php
+	// header('Access-Control-Allow-Origin: *app1.dev');
+	// header('Access-Control-Allow-Origin: http://app1.dev http://api.app1.dev');
+?><!doctype html>
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -41,6 +44,7 @@
 		<script src="/app/library/riot/riot+compiler.min.js"></script><!-- <script src="https://cdn.jsdelivr.net/riot/3.0/riot+compiler.min.js"></script> -->
 		<script src="/app/library/riot/route.min.js"></script>
 		<script>
+			var api = '/api';
 			riot.compile(function(){
 				riot.mount('webapp');
 				route.base('#!');
