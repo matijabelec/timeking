@@ -1,7 +1,7 @@
 <schedule-form>
   <div class="section-container">
     <form>
-      <input type="text" value={ schedule.id }>
+      <input type="text" value={ schedule.id } hidden>
 
       <label>
         <span>Name</span>
@@ -21,6 +21,7 @@
 
     self.on('before-mount', function(){
       self.id = this.opts.id;
+      self.schedule = {};
     });
 
     self.on('mount', function(){
@@ -28,8 +29,7 @@
   		  .method('get')
   		  .url(api + '/schedules/' + self.id)
   		  /*.data({limit: 10})*/
-  		  .on('200', function(response) {
-  				console.log(response);
+  		  .on('200', function(response){
   				self.update({ schedule: response.record });
   		  })
   		  .go();

@@ -41,8 +41,7 @@
   		  .method('get')
   		  .url(api + '/schedules')
   		  /*.data({limit: 10})*/
-  		  .on('200', function(response) {
-  				console.log(response);
+  		  .on('200', function(response){
   				self.update({ schedules: response.records });
   		  })
   		  .go();

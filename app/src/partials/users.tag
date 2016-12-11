@@ -43,8 +43,7 @@
   		  .method('get')
   		  .url(api + '/users')
   		  /*.data({limit: 10})*/
-  		  .on('200', function(response) {
-  				console.log(response);
+  		  .on('200', function(response){
   				self.update({ users: response.records });
   		  })
   		  .go();

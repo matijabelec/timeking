@@ -26,8 +26,7 @@
   		  .method('post')
   		  .url(api + '/schedules')
         .data({ name: self.schedule.name })
-  		  .on('200', function(response) {
-  				console.log(response);
+  		  .on('200', function(response){
           route('schedules');
   		  })
   		  .go();

@@ -13,7 +13,7 @@
 
 use Illuminate\Http\Request;
 
-$app->get('/users/{user}', function($userId) use ($app){
+$app->get('/users/{user}', function($userId){
   $results = DB::select("
 SELECT
   u.id AS 'id',
@@ -29,7 +29,7 @@ WHERE u.id = :id", ['id' => $userId]);
   }
 });
 
-$app->get('/users', function() use ($app){
+$app->get('/users', function(){
   $results = DB::select("
 SELECT
   u.id AS 'id',
@@ -67,6 +67,7 @@ $app->post('/schedules', function(Request $request){
     }
   }
 });
+
 $app->get('/schedules', function(){
   $results = DB::select("
 SELECT

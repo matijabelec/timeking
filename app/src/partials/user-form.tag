@@ -27,6 +27,7 @@
 
     self.on('before-mount', function(){
       self.id = this.opts.id;
+      self.user = {};
     });
 
     self.on('mount', function(){
@@ -34,7 +35,6 @@
   		  .method('get')
   		  .url(api + '/users/' + self.id)
   		  .on('200', function(response) {
-  				console.log(response);
   				self.update({ user: response.record });
   		  })
   		  .go();
