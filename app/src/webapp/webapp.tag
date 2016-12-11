@@ -92,6 +92,7 @@
 
 		route('/events', function(){
 			/*riot.mount('.app-main-content', 'events');*/
+			console.log('events preview');
 		});
 
 		route('/settings', function(){
@@ -99,7 +100,7 @@
 		});
 
 		route(function(){
-
+			console.log('unknown route');
 		});
 	</script>
 

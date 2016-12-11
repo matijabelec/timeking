@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class UsersController extends Controller
+class SchedulesController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -19,29 +19,32 @@ class UsersController extends Controller
     public function index(){
       $results = \DB::select("
 SELECT
-  u.id AS 'id',
-  u.username AS 'username',
-  us.name AS 'status'
-FROM users u
-LEFT JOIN user_statuses us ON u.id_user_status = us.id");
+  s.id AS 'id',
+  s.name AS 'name'
+FROM schedules s");
       return response()->json([
         'records' => $results,
       ]);
     }
 
-    public function create(){
-
+    public function create(Request $request){
+      $name = $request->input('name', false);
+      if($name){
+        if(\DB::insert("INSERT INTO schedules(name) VALUES(?)", [$name]) ){
+          return response()->json([
+            'status' => 'success',
+          ]);
+        }
+      }
     }
 
     public function read($id){
       $results = \DB::select("
 SELECT
-u.id AS 'id',
-u.username AS 'username',
-us.name AS 'status'
-FROM users u
-LEFT JOIN user_statuses us ON u.id_user_status = us.id
-WHERE u.id = :id", ['id' => $id]);
+  s.id AS 'id',
+  s.name AS 'name'
+FROM schedules s
+WHERE s.id = :id", ['id' => $id]);
       if(count($results) === 1){
         return response()->json([
           'record' => $results[0],
