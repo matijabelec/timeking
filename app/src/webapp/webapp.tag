@@ -47,7 +47,7 @@
 				</li>
 				<li>
 					<i class="material-icons">event</i>
-					<a href="#!/events">Events</a>
+					<a href="">Events</a>
 				</li>
 				<li class="separator"></li>
 				<li>
@@ -90,17 +90,13 @@
 			riot.mount('.app-main-preview', 'schedules');
 		});
 
-		route('/events', function(){
-			/*riot.mount('.app-main-content', 'events');*/
-			console.log('events preview');
-		});
-
 		route('/settings', function(){
-			riot.mount('.app-main-content', 'settings-form');
+			riot.mount('.app-main-preview', 'settings-form');
 		});
 
 		route(function(){
-			console.log('unknown route');
+			console.log('unknown route preview');
+			route('/schedules');
 		});
 	</script>
 

@@ -13,11 +13,15 @@
 
 use Illuminate\Http\Request;
 
-$app->get('/users/{id}', 'UsersController@read');
-$app->get('/users', 'UsersController@index');
+$app->post  ('login', 'AuthController@login');
+$app->post  ('logout', 'AuthController@logout');
+$app->post  ('register', 'AuthController@register');
 
-$app->get('/schedules/{id}', 'SchedulesController@read');
-$app->post('/schedules', 'SchedulesController@create');
-$app->get('/schedules', 'SchedulesController@index');
+$app->get   ('users/{id}', 'UsersController@read');
+$app->get   ('users', 'UsersController@index');
+
+$app->get   ('schedules/{id}', 'SchedulesController@read');
+$app->post  ('schedules', 'SchedulesController@create');
+$app->get   ('schedules', 'SchedulesController@index');
 
 $app->get('/', 'HomeController@index');

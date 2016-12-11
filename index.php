@@ -20,7 +20,7 @@
 		<style type="riot"></style>
 	</head>
 	<body>
-		<webapp></webapp>
+		<webapp class="app-page"></webapp>
 
 		<script type="riot/tag" src="/app/src/partials/settings-form.tag"></script>
 
@@ -38,6 +38,8 @@
 		<script type="riot/tag" src="/app/src/users/users-list.tag"></script>
 		<script type="riot/tag" src="/app/src/security/login-form.tag"></script>
 		<script type="riot/tag" src="/app/src/webapp/webapp.tag"></script>
+
+		<script type="riot/tag" src="/app/src/pages/login-page.tag"></script>
 
 		<script src="/app/library/polyfills/polyfill.min.js"></script><!-- <script src="https://cdn.polyfill.io/v1/polyfill.min.js"></script> -->
 		<script src="/app/library/aja/aja.min.js"></script><!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/aja/0.4.1/aja.min.js"></script> -->

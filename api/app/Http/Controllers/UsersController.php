@@ -16,6 +16,11 @@ class UsersController extends Controller
         //
     }
 
+    /**
+     * Return list of users from DB.
+     *
+     * @return Illuminate\Http\jsonResponse
+     */
     public function index(){
       $results = \DB::select("
 SELECT
@@ -30,9 +35,14 @@ LEFT JOIN user_statuses us ON u.id_user_status = us.id");
     }
 
     public function create(){
-
+      
     }
 
+    /**
+     * Get user details from DB.
+     *
+     * @return Illuminate\Http\jsonResponse
+     */
     public function read($id){
       $results = \DB::select("
 SELECT
